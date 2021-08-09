@@ -23,22 +23,7 @@ cortex-m-rt="0.6"
 board = { path="../board" }
 messages = { path = "../../messages" }
 
-postcard = "0.7""--chip", "{{chip}}"
-"--chip", "{{chip}}"
-"--chip", "{{chip}}"
-"--chip", "{{chip}}"
-"--chip", "{{chip}}"
-"--chip", "{{chip}}"
-"--chip", "{{chip}}"
-"--chip", "{{chip}}""--chip", "{{chip}}"
-"--chip", "{{chip}}"
-"--chip", "{{chip}}"
-"--chip", "{{chip}}"
-"--chip", "{{chip}}"
-"--chip", "{{chip}}"
-"--chip", "{{chip}}"
-"--chip", "{{chip}}"
-
+postcard = "0.7"
 panic-probe = { version = "0.2", features = ["print-defmt" ] }
 defmt = "0.2"
 defmt-rtt = {version="0.2", optional=true}

@@ -9,6 +9,12 @@ Currently `xtask` supports these [Chips](./chips.txt), even if this template won
 
 Big thanks to [ferrous-systems] for tools and ideas - They really do help make embedded rust great!
 
+## VSCode integration
+
+The template contains task and launch configuration for integration with [vscode]. The tasks can be seen/run by pressing `ctrl+shift+b`, or running the command `Task: Run Build Task`.
+
+## Template Contents 
+
 ### Outer workspace
 
 This workspace contains the general setup and all the crates that are not target specific - i.e. they can be compiled for, and unittested on, the host.
