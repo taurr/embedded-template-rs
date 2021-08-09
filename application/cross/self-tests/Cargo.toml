@@ -1,0 +1,33 @@
+[package]
+name = "self-tests"
+version = "0.1.0"
+edition = "2018"
+authors = ["{{authors}}"]
+
+[[test]]
+name = "test"
+harness = false
+
+[dependencies]
+{{project-name}} = { path = "../{{project-name}}" }
+board = { path = "../board" }
+
+cortex-m = "0.7"
+defmt = "0.2"
+defmt-rtt = "0.2"
+defmt-test = "0.2"
+panic-probe = { version = "0.2", features = ["print-defmt"] }
+
+[features]
+default = [
+    'defmt-trace',
+    '{{project-name}}/defmt-trace',
+    'board/defmt-trace',
+]
+# these features are required by defmt
+defmt-default = []
+defmt-trace = []
+defmt-debug = []
+defmt-info = []
+defmt-warn = []
+defmt-error = []

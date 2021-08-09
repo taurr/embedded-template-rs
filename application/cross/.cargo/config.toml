@@ -1,0 +1,7 @@
+[target.'cfg(all(target_arch = "arm", target_os = "none"))']
+rustflags = [
+  "-C", "link-arg=-Tlink.x",  # required by cortex-m-rt
+  "-C", "link-arg=--nmagic",
+  "-C", "linker=flip-link",   # stack overflow protection
+  "-C", "link-arg=-Tdefmt.x", # defmt logs
+]

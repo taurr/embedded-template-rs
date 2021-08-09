@@ -1,0 +1,13 @@
+[package]
+name = "xtask"
+version = "0.1.0"
+edition = "2018"
+authors= ["{{authors}}"]
+
+[dependencies]
+anyhow = "1.0"
+duct = "0.13"
+strum = "0.21"
+structopt = "0.3"
+strum_macros = "0.21"
+console = "0.14"

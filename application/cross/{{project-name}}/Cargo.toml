@@ -1,0 +1,56 @@
+[package]
+name = "{{project-name}}"
+version = "0.1.0"
+edition = "2018"
+authors= ["{{authors}}"]
+
+[lib]
+test = false
+doctest = false
+bench = false
+
+[[bin]]
+name = "{{project-name}}"
+test = false
+doctest = false
+bench = false
+
+[dependencies]
+microbit="0.10"
+cortex-m = "0.7"
+cortex-m-rt="0.6"
+
+board = { path="../board" }
+messages = { path = "../../messages" }
+
+postcard = "0.7""--chip", "{{chip}}"
+"--chip", "{{chip}}"
+"--chip", "{{chip}}"
+"--chip", "{{chip}}"
+"--chip", "{{chip}}"
+"--chip", "{{chip}}"
+"--chip", "{{chip}}"
+"--chip", "{{chip}}""--chip", "{{chip}}"
+"--chip", "{{chip}}"
+"--chip", "{{chip}}"
+"--chip", "{{chip}}"
+"--chip", "{{chip}}"
+"--chip", "{{chip}}"
+"--chip", "{{chip}}"
+"--chip", "{{chip}}"
+
+panic-probe = { version = "0.2", features = ["print-defmt" ] }
+defmt = "0.2"
+defmt-rtt = {version="0.2", optional=true}
+defmt-itm = {version="0.2", optional=true}
+
+[features]
+default = ["defmt-rtt", "defmt-default"]
+
+# do NOT modify these features
+defmt-default = []
+defmt-trace = []
+defmt-debug = []
+defmt-info = []
+defmt-warn = []
+defmt-error = []

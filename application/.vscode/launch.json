@@ -1,0 +1,18 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Attach gdb {{project-name}}",
+      "preLaunchTask": "🐞  gdb {{project-name}}",
+      "cwd": "${workspaceRoot}/cross",
+      "request": "attach",
+      "type": "cortex-debug",
+      "servertype": "external",
+      "gdbTarget": ":1337",
+      // TODO adjust all these to fit your system, program and hardware
+      "executable": "./target/thumbv6m-none-eabi/debug/{{project-name}}",
+      "gdbPath": "arm-none-eabi-gdb", // or gdb or multiarch-gdb
+      "svdFile": "nrf51.svd" // optional
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "⏳ build {{project-name}}",
+      "detail": "Build release {{project-name}} with size info",
+      "type": "cargo",
+      "command": "xtask",
+      "args": ["build-app"],
+      "problemMatcher": ["$rustc"],
+      "group": "build"
+    },
+    {
+      "label": "✈️  flash {{project-name}}",
+      "detail": "Flash release {{project-name}}",
+      "type": "cargo",
+      "command": "xtask",
+      "args": ["flash-app"],
+      "problemMatcher": ["$rustc"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "clear": true
+      }
+    },
+    {
+      "label": "🚗  run {{project-name}}",
+      "detail": "Run release {{project-name}}, attach RTT viewer",
+      "type": "cargo",
+      "command": "xtask",
+      "args": ["run-app"],
+      "problemMatcher": ["$rustc"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "🐞  gdb {{project-name}}",
+      "detail": "Build/Flash debug {{project-name}}, launch GDB server",
+      "type": "cargo",
+      "command": "xtask",
+      "args": ["gdb-app"],
+      "group": "build",
+      "isBackground": true,
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "🧪  test @host",
+      "detail": "Run unit-tests on the host",
+      "type": "cargo",
+      "command": "xtask",
+      "args": ["test-host"],
+      "problemMatcher": ["$rustc"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "clear": true
+      }
+    },
+    {
+      "label": "🧪  test @target",
+      "detail": "Run unit-tests on the target",
+      "type": "cargo",
+      "command": "xtask",
+      "args": ["test-target"],
+      "problemMatcher": ["$rustc"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "clear": true
+      }
+    },
+    {
+      "label": "🧪  test host-target",
+      "detail": "Run host-target-tests w. target app",
+      "type": "cargo",
+      "command": "xtask",
+      "args": ["test-host-target"],
+      "problemMatcher": ["$rustc"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "clear": true
+      }
+    },
+    {
+      "label": "🧪  test all",
+      "detail": "Run all tests",
+      "type": "cargo",
+      "command": "xtask",
+      "args": ["test-all"],
+      "problemMatcher": ["$rustc"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "clear": true
+      }
+    },
+    {
+      "label": "🛡️  install dependencies",
+      "detail": "Install all dependencies except rust!",
+      "type": "cargo",
+      "command": "xtask",
+      "args": ["install-dependencies"],
+      "problemMatcher": [],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "clear": true
+      }
+    },
+  ]
+}

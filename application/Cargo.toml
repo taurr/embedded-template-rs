@@ -1,0 +1,6 @@
+[workspace]
+members = [
+    "xtask",    # Mandatory - Handles all `cargo xtask <subcommand>` tasks
+    "messages", # Example Host/Target common code. Messages for communication
+    "host-target-tests",    # Host Tests for host+target
+]
