@@ -2,7 +2,7 @@
 # cache: https://github.com/actions/cache/blob/main/examples.md#rust---cargo
 # "needs": https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idneeds
 
-name: Build
+name: build app template
 on:
   push:
     branches: [ '*' ]

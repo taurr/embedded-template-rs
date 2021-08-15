@@ -1,3 +1,11 @@
+[template]
+cargo_generate_version = ">=0.8.0"
+exclude = [
+    ".vscode/.cortex-debug.peripherals.state.json",
+    ".vscode/.cortex-debug.registers.state.json",
+    "chips.txt",
+]
+
 [placeholders.chip]
 type = "string"
 prompt = "What chip is this for?"
