@@ -22,6 +22,8 @@ This workspace contains the general setup and all the crates that are not target
 > NOTE: The `.cargo` folder holds the configuration needed for `cargo` to run the `xtask` commands.
 
 > NOTE: `.vscode` holds task and launch configuration for use inside [vscode].
+> 
+> ⚠️ `launch.json` contains a few settings that must be changed manually in order for the integration to function correctly.
 
 #### Crates
 
@@ -55,7 +57,7 @@ Starting point for a test-suite used to test host/target communication.
 
 ### Inner workspace
 
-Located in the `cross` folder, this workspace is for target specific code and files.
+Located in the `target-crates` folder, this workspace is for target specific code and files.
 
 Chip and target information to the build-tools are provided by the `xtask` command system as CLI arguments and ENV variables .
 
@@ -72,11 +74,11 @@ Chip and target information to the build-tools are provided by the `xtask` comma
 Target specific application.
 
 Only contains example code for using the `defmt` log system.
-
+{% if board=="Custom" %}
 ##### board
 
 Here to remind that board-specific code should be in its own crate!
-
+{% endif %}
 ##### self-tests
 
 Example tests that needs to be run on the target.

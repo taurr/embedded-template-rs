@@ -83,7 +83,7 @@ pub(crate) fn test_target(
         style(target_test_crate).bold().yellow(),
     );
     cargo_run_target(
-        vec!["test", "-p", target_test_crate],
+        vec!["test", "--features", "defmt-trace", "-p", target_test_crate],
         target_workspace_path,
         chip,
     )
@@ -99,6 +99,11 @@ pub(crate) fn build_target_crate(
         style("building target:").green(),
         style(bin_crate).bold().yellow()
     );
+    cargo_run_target(
+        vec!["build", "--release", "--bin", bin_crate],
+        target_workspace_path,
+        chip,
+    )?;
     cargo_run_target(
         vec!["size", "--release", "--bin", bin_crate],
         target_workspace_path,

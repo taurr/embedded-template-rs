@@ -15,23 +15,29 @@ test = false
 doctest = false
 bench = false
 
-[dependencies]
-microbit="0.10"
+[dependencies]{% case board %}
+{% when "Microbit" %}
+microbit="0.11"
 cortex-m = "0.7"
 cortex-m-rt="0.6"
-
+{% when "Custom" %}
+cortex-m = "0.7"
+cortex-m-rt="0.7"
 board = { path="../board" }
+TODO: specify HAL crate
+{% endcase %}
 messages = { path = "../../messages" }
 
 postcard = "0.7"
 panic-probe = { version = "0.2", features = ["print-defmt" ] }
 defmt = "0.2"
-defmt-rtt = {version="0.2", optional=true}
-defmt-itm = {version="0.2", optional=true}
+defmt-rtt = {version="0.2"}
 
 [features]
-default = ["defmt-rtt", "defmt-default"]
-
+default = [
+    "defmt-default",{% if board=="Custom" %}
+    "board/defmt-default",{% endif %}
+]
 # do NOT modify these features
 defmt-default = []
 defmt-trace = []

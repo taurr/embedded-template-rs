@@ -4,7 +4,7 @@
     {
       "name": "Attach gdb {{project-name}}",
       "preLaunchTask": "🐞  gdb {{project-name}}",
-      "cwd": "${workspaceRoot}/cross",
+      "cwd": "${workspaceRoot}/target-crates",
       "request": "attach",
       "type": "cortex-debug",
       "servertype": "external",

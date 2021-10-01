@@ -20,21 +20,21 @@ fn main() -> Result<(), Error> {
 
         InstallDependencies => install_dependencies(&[chip]),
 
-        BuildApp => build_target_crate("cross", "{{project-name}}", chip),
-        FlashApp => flash_target_crate("cross", "{{project-name}}", chip),
-        RunApp => run_target_crate("cross", "{{project-name}}", chip),
-        GdbApp => debug_target_crate("cross", "{{project-name}}", chip),
+        BuildApp => build_target_crate("target-crates", "{{project-name}}", chip),
+        FlashApp => flash_target_crate("target-crates", "{{project-name}}", chip),
+        RunApp => run_target_crate("target-crates", "{{project-name}}", chip),
+        GdbApp => debug_target_crate("target-crates", "{{project-name}}", chip),
 
         TestAll => {
             test_host(&["host-target-tests"])?;
-            test_target("cross", "self-tests", chip)?;
-            test_host_with_target("host-target-tests", "cross", "{{project-name}}", chip)
+            test_target("target-crates", "self-tests", chip)?;
+            test_host_with_target("host-target-tests", "target-crates", "{{project-name}}", chip)
         }
         TestHost => test_host(&["host-target-tests"]),
         TestHostTarget => {
-            test_host_with_target("host-target-tests", "cross", "{{project-name}}", chip)
+            test_host_with_target("host-target-tests", "target-crates", "{{project-name}}", chip)
         }
-        TestTarget => test_target("cross", "self-tests", chip),
+        TestTarget => test_target("target-crates", "self-tests", chip),
     }
 }
 

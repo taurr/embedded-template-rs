@@ -1,9 +1,10 @@
 [workspace]
 members = [
-    "{{project-name}}",
-    "board",
+    "{{project-name}}",{% if board=="Custom" %}
+    "board",{% endif %}
     "self-tests",
 ]
+resolver =  "2"
 
 # cargo build/run
 [profile.dev]

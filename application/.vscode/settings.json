@@ -2,6 +2,6 @@
   "rust-analyzer.linkedProjects": [
     // order is important (rust-analyzer/rust-analyzer#7764)
     "Cargo.toml",
-    "cross/Cargo.toml"
+    "target-crates/Cargo.toml"
   ],
 }
